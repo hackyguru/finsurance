@@ -8,6 +8,7 @@ import Type from "./pages/Type";
 import VehicleNumber from "./pages/VehicleNumber";
 import Verify from "./pages/Verify";
 import City from "./pages/City";
+import Loader from "./components/Loader";
 
 function App() {
   return (
@@ -25,16 +26,16 @@ function App() {
             />
             <Route exact path="/type" element={<Type />} />
             <Route exact path="/vehicle" element={<VehicleNumber />} />
-            {/*<Route*/}
-            {/*  exact*/}
-            {/*  path="/obtainperson"*/}
-            {/*  element={<Loader value="Obtaining personal data from SETU..." />}*/}
-            {/*/>*/}
-            {/*<Route*/}
-            {/*  exact*/}
-            {/*  path="/obtainvehicle"*/}
-            {/*  element={<Loader value="Obtaining vehicle information..." />}*/}
-            {/*/>*/}
+            <Route
+              exact
+              path="/obtainperson"
+              element={<Loader value="Obtaining personal data from SETU..." />}
+            />
+            <Route
+              exact
+              path="/obtainvehicle"
+              element={<Loader value="Obtaining vehicle information..." />}
+            />
             <Route exact path="/vehicle" element={<VehicleNumber />} />
             <Route exact path="/city" element={<City />} />
           </Routes>
