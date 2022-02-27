@@ -1,5 +1,4 @@
 const Loader = (props) => {
-    console.log(props.value)
   return (
     <>
       <div className="flex justify-center">
