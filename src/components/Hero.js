@@ -1,6 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "../utils/axios";
 
 export default function Hero() {
+
+  const [phone, setPhone] = useState();
+
+  function handleSubmit() {
+    axios().post('auth', {
+      phone,
+      redirect_url: 'http://localhost:3000/verify'
+    }).then((response) => {
+      window.location.href = response.data
+    })
+  }
+
   return (
     <div className="flex justify-between px-20">
       <div className="mt-40">
@@ -25,6 +38,7 @@ export default function Hero() {
             class="w-full py-3 mt-10 pl-3 pr-12 text-sm border-2 border-gray-200 rounded"
             id="phone"
             placeholder="Phone number"
+            onChange={(e) => setPhone(e.target.value)}
           />
 
           <span class="absolute text-gray-500 -translate-y-1/2 pointer-events-none top-1/2 right-4">
@@ -39,7 +53,7 @@ export default function Hero() {
           </span>
         </div>
 
-        <button className="bg-primary p-3 rounded-md mt-10 text-bg title">
+        <button className="bg-primary p-3 rounded-md mt-10 text-bg title" onClick={() => handleSubmit()}>
           Get Started
         </button>
       </div>
