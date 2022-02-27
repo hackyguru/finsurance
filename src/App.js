@@ -7,6 +7,7 @@ import Team from "./components/Team";
 import Loader from "./pages/Loader";
 import TypeSelection from "./pages/TypeSelection";
 import VehicleNumber from "./pages/VehicleNumber";
+import City from "./pages/City";
 
 function App() {
   return (
@@ -24,6 +25,18 @@ function App() {
             />
             <Route exact path="/type" element={<TypeSelection />} />
             <Route exact path="/vehicle" element={<VehicleNumber />} />
+            <Route
+              exact
+              path="/obtainperson"
+              element={<Loader value="Obtaining personal data from SETU..." />}
+            />
+            <Route
+              exact
+              path="/obtainvehicle"
+              element={<Loader value="Obtaining vehicle information..." />}
+            />
+            <Route exact path="/vehicle" element={<VehicleNumber />} />
+            <Route exact path="/city" element={<City />} />
           </Routes>
         </BrowserRouter>
       </div>
