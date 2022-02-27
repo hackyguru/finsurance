@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 
-export default function TypeSelection() {
+export default function Type() {
   return (
     <div>
       <Navbar />
